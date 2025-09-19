@@ -2,7 +2,6 @@
 import Card from "@/component/Card";
 import Header from "@/component/Header";
 import InfoCard from "@/component/InfoCard";
-import Image from "next/image";
 import { useState } from "react";
 import { FaCartPlus, FaBriefcaseMedical } from "react-icons/fa";
 import { MdFactory } from "react-icons/md";
