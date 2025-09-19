@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/vercel/next.js/canary/examples/with-typescript/public/vercel.svg" alt="Next.js Logo" width="120" />
-</p>
-
 # 🚚 Terminus
 
 A modern logistics and courier management dashboard built with [Next.js](https://nextjs.org), designed for speed, clarity, and real-time operations. Track drivers, manage deliveries, and chat with your team—all in one place.
