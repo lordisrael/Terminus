@@ -9,14 +9,6 @@ import { IoTimerOutline } from "react-icons/io5";
 import { LuMessageSquareText, LuKeyRound } from "react-icons/lu";
 import { CiSettings } from "react-icons/ci";
 import { FiLogOut } from "react-icons/fi";
-import { SlOptionsVertical } from "react-icons/sl";
-import { IoCalendarOutline } from "react-icons/io5";
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
-import ShipmentCard from "@/component/ShipmentCard";
-import { CustomBarProps, CustomBar, CustomTooltip } from "@/component/CustomBar";
-import ShipmentTable from "@/component/ShipmentTable";
-import TrackingCard from "@/component/TrackingCard";
-import { MoreVertical } from "lucide-react";
 import { useChatStore } from "@/stores/useChatStore";
 import { useState } from "react";
 

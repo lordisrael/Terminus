@@ -3,7 +3,6 @@
 
 //import { Progress } from "@/components/ui/progress"; // Optional: If you use shadcn/ui
 import Image from "next/image";
-import { MoreVertical } from "lucide-react";
 
 export default function TrackingCard() {
     return (

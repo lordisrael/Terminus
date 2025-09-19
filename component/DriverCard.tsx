@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import clsx from "clsx";
-import { IoCallOutline, IoListSharp, IoLocationOutline } from "react-icons/io5";
+import { IoCallOutline} from "react-icons/io5";
 import { FaTruck } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
 import { TbCurrentLocation } from "react-icons/tb";

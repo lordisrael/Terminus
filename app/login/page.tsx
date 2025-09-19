@@ -61,7 +61,7 @@ export default function SignupPage() {
           >
             Sign In
           </button>
-          <h2 className="text-center text-gray-500 mt-4">Don't have an account? <a href="/signup" className="text-[#292928] font-semibold">{" "}Sign Up</a></h2>
+          <h2 className="text-center text-gray-500 mt-4">Don&apos;t have an account? <a href="/signup" className="text-[#292928] font-semibold">{" "}Sign Up</a></h2>
         </form>
       </div>
     </div>

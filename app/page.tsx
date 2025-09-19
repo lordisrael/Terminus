@@ -3,9 +3,8 @@ import Card from "@/component/Card";
 import Header from "@/component/Header";
 import InfoCard from "@/component/InfoCard";
 import Image from "next/image";
-import { title } from "process";
 import { useState } from "react";
-import { FaShoppingCart, FaCartPlus, FaBriefcaseMedical } from "react-icons/fa";
+import { FaCartPlus, FaBriefcaseMedical } from "react-icons/fa";
 import { MdFactory } from "react-icons/md";
 import { FaComputer } from "react-icons/fa6";
 

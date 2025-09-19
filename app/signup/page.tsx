@@ -27,7 +27,7 @@ export default function SignupPage() {
         <div className="absolute top-6 left-10 mt-2 text-2xl font-extrabold text-[#292928] tracking-wide select-none z-10">TERMINUS</div>
         <form className="w-full max-w-md p-8 " onSubmit={handleSubmit}>
           <h2 className="text-3xl font-bold mb-2 text-gray-900">Welcome</h2>
-          <h3 className="text-[#292928] mb-8">Let's create your new account</h3>
+          <h3 className="text-[#292928] mb-8">Let&apos;s create your new account</h3>
           {/* Social login buttons */}
           <div className="flex flex-col gap-4 mb-8 w-full">
             <button type="button" className="flex items-center justify-center gap-2 w-full border rounded-xl py-3 bg-white text-gray-900 font-semibold shadow hover:bg-gray-100">
