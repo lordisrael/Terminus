@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+  <img src="https://raw.githubusercontent.com/vercel/next.js/canary/examples/with-typescript/public/vercel.svg" alt="Next.js Logo" width="120" />
+</p>
 
-## Getting Started
+# 🚚 Terminus
 
-First, run the development server:
+A modern logistics and courier management dashboard built with [Next.js](https://nextjs.org), designed for speed, clarity, and real-time operations. Track drivers, manage deliveries, and chat with your team—all in one place.
+
+---
+
+## 🚀 Quick Start
+
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/your-username/terminus.git
+cd terminus
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [https://terminus-4avn.vercel.app/](https://terminus-4avn.vercel.app/) to see Terminus in action.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ✨ Features
 
-## Learn More
+- **Live Driver Tracking**: See your fleet move in real time.
+- **Courier/Driver Profiles**: Avatars, status, and contact actions.
+- **Integrated Chat**: Message drivers and staff instantly.
+- **Modern UI**: Built with Tailwind CSS and optimized for all screens.
+- **Next.js 14**: Blazing fast, SEO-friendly, and ready for production.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- ![Next.js](https://img.shields.io/badge/Next.js-000?logo=next.js&logoColor=white)
+- ![TypeScript](https://img.shields.io/badge/TypeScript-3178c6?logo=typescript&logoColor=white)
+- ![React](https://img.shields.io/badge/React-20232a?logo=react&logoColor=61dafb)
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38bdf8?logo=tailwind-css&logoColor=white)
+- [Google Maps API](https://developers.google.com/maps) (for live tracking)
+- [Vercel](https://vercel.com) (for deployment)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+terminus/
+├── app/                # Next.js app directory
+├── components/         # Reusable React components (DriverCard, Chat, etc.)
+├── public/             # Static assets
+├── styles/             # Tailwind and global styles
+├── README.md
+└── ...
+```
+
+---
+
+## 🧑‍💻 Development
+
+- Edit pages in `app/`
+- Edit UI components in `components/`
+- Tailwind config in `tailwind.config.js`
+
+Hot reload is enabled. Save and see changes instantly.
+
+---
+
+## 📦 Deploy
+
+Deploy instantly with [Vercel](https://vercel.com/new?utm_source=create-next-app&utm_campaign=create-next-app-readme):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new?utm_source=create-next-app&utm_campaign=create-next-app-readme)
+
+---
+
+## 📚 Learn More
+
+- [Next.js Docs](https://nextjs.org/docs)
+- [Tailwind CSS Docs](https://tailwindcss.com/docs)
+- [Vercel Deployment](https://nextjs.org/docs/app/building-your-application/deploying)
+
+---
+
+## 🤘 Contributing
+
+Pull requests are welcome! For major changes, open an issue first to discuss what you’d like to change.
+
+---
+
+## 🏁 License
+
+MIT
+
+---
+
+> Built with 💙 by your team. Move fast, deliver faster.
