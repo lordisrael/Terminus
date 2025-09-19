@@ -6,11 +6,12 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { FaRegBell, FaSearch, FaHome, FaChartBar, FaFileInvoice, FaRegUserCircle } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
 import { IoTimerOutline } from "react-icons/io5";
+import { Suspense, useState } from "react";
 import { LuMessageSquareText, LuKeyRound } from "react-icons/lu";
 import { CiSettings } from "react-icons/ci";
 import { FiLogOut } from "react-icons/fi";
 import { useChatStore } from "@/stores/useChatStore";
-import { useState } from "react";
+
 
 
 const sidebarLinks = [
@@ -26,11 +27,20 @@ const otherLinks = [
     { name: "Drivers", href: "/drivers", icon: <FaRegUserCircle size={22} /> },
 ];
 
+
 export default function DashboardLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
+  return (
+    <Suspense fallback={<div className="h-screen flex items-center justify-center">Loading chat…</div>}>
+      <DashboardLayoutContent>{children}</DashboardLayoutContent>
+    </Suspense>
+  );
+}
+
+function DashboardLayoutContent({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
     const searchParams = useSearchParams();
     const driverId = searchParams.get("id");
