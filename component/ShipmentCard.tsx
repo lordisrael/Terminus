@@ -1,6 +1,6 @@
 "use client"
 
-import { IoArrowUp, IoArrowDown, IoCubeOutline  } from "react-icons/io5";
+import { IoArrowUp, IoArrowDown  } from "react-icons/io5";
 
 export default function ShipmentCard({
   title,

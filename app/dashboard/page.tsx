@@ -16,6 +16,9 @@ import ShipmentCard from "@/component/ShipmentCard";
 import { CustomBarProps, CustomBar, CustomTooltip } from "@/component/CustomBar";
 import ShipmentTable from "@/component/ShipmentTable";
 import TrackingCard from "@/component/TrackingCard";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { logout } from "@/lib/api";
 
 
 const data = [
@@ -59,7 +62,39 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
+  const [token, setToken] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
+  const handleLogout = async () => {
+    await logout();
+    router.push("/login");
+  };
+  useEffect(() => {
+    const storedToken = localStorage.getItem("accessToken");
+    if (!storedToken) {
+      router.push("/login");
+    } else {
+      setToken(storedToken);
+    }
+    setIsLoading(false);
+  }, [router]);
+
+  // Show loading screen while checking auth
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-gray-50">
+        <div className="text-center">
+          <div className="text-2xl font-bold text-[#292928] mb-2">⚡ Terminus</div>
+          <div className="text-gray-500">Loading...</div>
+        </div>
+      </div>
+    );
+  }
+  // Don't render dashboard if no token
+  if (!token) {
+    return null;
+  }
 
   return (
     <div className="flex h-screen bg-gray-50">
@@ -125,7 +160,7 @@ export default function DashboardLayout({
               Setup
             </span>
           </Link>
-          <button className="flex items-center gap-2 w-full mt-2 rounded-lg px-4 py-2 text-sm font-medium text-red-500 hover:bg-red-50">
+          <button onClick={handleLogout} className="flex items-center gap-2 w-full mt-2 rounded-lg px-4 py-2 text-sm font-medium text-red-500 hover:bg-red-50">
             <FiLogOut />
             Log out
           </button>

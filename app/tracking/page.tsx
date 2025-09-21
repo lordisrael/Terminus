@@ -9,11 +9,13 @@ import { IoLocationOutline, IoTimerOutline } from "react-icons/io5";
 import { LuMessageSquareText, LuKeyRound } from "react-icons/lu";
 import { CiSettings } from "react-icons/ci";
 import { FiLogOut } from "react-icons/fi";
-import { useState } from "react";
 import DriverCard from "@/component/DriverCard";
 import MapContainer from "@/component/MapContainer";
 import { IoListSharp } from "react-icons/io5";
 import { FaSort } from "react-icons/fa6";
+import { logout } from "@/lib/api";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const packages = [
   {
@@ -91,12 +93,42 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
+  const [token, setToken] = useState<string | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
 
   const [selected, setSelected] = useState<string | null>(null);
+  const handleLogout = async () => {
+    await logout();
+    router.push("/login");
+  };
+  useEffect(() => {
+    const storedToken = localStorage.getItem("accessToken");
+    if (!storedToken) {
+      router.push("/login");
+    } else {
+      setToken(storedToken);
+    }
+    setIsLoading(false);
+  }, [router]);
 
   const selectedDriver = drivers.find((d) => d.id === selected) || null;
-
+  // Show loading screen while checking auth
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen bg-gray-50">
+        <div className="text-center">
+          <div className="text-2xl font-bold text-[#292928] mb-2">⚡ Terminus</div>
+          <div className="text-gray-500">Loading...</div>
+        </div>
+      </div>
+    );
+  }
+  // Don't render dashboard if no token
+  if (!token) {
+    return null;
+  }
   return (
     <div className="flex h-screen bg-gray-50">
       {/* Sidebar */}
@@ -159,7 +191,7 @@ export default function DashboardLayout({
               Setup
             </span>
           </Link>
-          <button className="flex items-center gap-2 w-full mt-2 rounded-lg px-4 py-2 text-sm font-medium text-red-500 hover:bg-red-50">
+          <button onClick={handleLogout} className="flex items-center gap-2 w-full mt-2 rounded-lg px-4 py-2 text-sm font-medium text-red-500 hover:bg-red-50">
             <FiLogOut />
             Log out
           </button>
