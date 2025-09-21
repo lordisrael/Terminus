@@ -16,6 +16,21 @@ export default function LoginPage() {
     setError("");
     setIsLoading(true);
 
+    // Validate empty fields
+    if (!email.trim() || !password.trim()) {
+      setError("Please fill in all fields");
+      setIsLoading(false);
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address");
+      setIsLoading(false);
+      return;
+    }
+
     try {
       const response = await apiFetch("/api/users/login", {
         method: "POST",

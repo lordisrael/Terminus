@@ -16,18 +16,32 @@ export default function SignupPage() {
     e.preventDefault();
     setError("");
     setIsLoading(true);
+    // Validate empty fields
+    if (!email.trim() || !password.trim()) {
+      setError("Please fill in all fields");
+      setIsLoading(false);
+      return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address");
+      setIsLoading(false);
+      return;
+    }
     // Password validation
-  if (password.length < 8) {
-    setError("Password must be at least 8 characters long");
-    setIsLoading(false);
-    return;
-  }
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters long");
+      setIsLoading(false);
+      return;
+    }
     try {
       const response = await apiFetch("/api/users/signup", {
-              method: "POST",
-              body: JSON.stringify({name, email, password }),
-            });
-            if (response.success) {
+        method: "POST",
+        body: JSON.stringify({ name, email, password }),
+      });
+      if (response.success) {
         // Store access token
         localStorage.setItem("accessToken", response.data.token);
 
@@ -55,7 +69,7 @@ export default function SignupPage() {
 
       // Try to extract backend message
       let message = "Something went wrong. Please try again.";
-      
+
       if (err instanceof Error) {
         try {
           const parsed = JSON.parse(err.message.split(" - ")[1]); // from apiFetch throw
@@ -92,11 +106,11 @@ export default function SignupPage() {
           {/* Social login buttons */}
           <div className="flex flex-col gap-4 mb-8 w-full">
             <button type="button" className="flex items-center justify-center gap-2 w-full border rounded-xl py-3 bg-white text-gray-900 font-semibold shadow hover:bg-gray-100">
-              <FaGoogle size={20} color="#4285F4"/>
+              <FaGoogle size={20} color="#4285F4" />
               <span>Continue with Google</span>
             </button>
             <button type="button" className="flex items-center justify-center gap-2 w-full border rounded-xl py-3 bg-white text-gray-900 font-semibold shadow hover:bg-gray-100">
-              <FaFacebookF size={20} color="#4267B2"/>
+              <FaFacebookF size={20} color="#4267B2" />
               <span>Continue with Facebook</span>
             </button>
           </div>
