@@ -50,7 +50,7 @@ export default function LoginPage() {
 
       // Try to extract backend message
       let message = "Something went wrong. Please try again.";
-      
+
       if (err instanceof Error) {
         try {
           const parsed = JSON.parse(err.message.split(" - ")[1]); // from apiFetch throw
@@ -117,14 +117,16 @@ export default function LoginPage() {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-              className="w-full mb-4 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#292928] focus:border-transparent"
-            />
+            className="w-full mb-4 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#292928] focus:border-transparent text-base text-gray-900 bg-white placeholder-gray-500"
+            style={{ fontSize: '16px' }}
+          />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full mb-4 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#292928] focus:border-transparent"
+            className="w-full mb-4 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#292928] focus:border-transparent text-base text-gray-900 bg-white placeholder-gray-500"
+            style={{ fontSize: '16px' }}
           />
           <button
             type="submit"

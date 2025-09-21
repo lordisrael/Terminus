@@ -111,21 +111,24 @@ export default function SignupPage() {
             placeholder="Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full mb-4 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#292928] focus:border-transparent"
+            className="w-full mb-4 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#292928] focus:border-transparent text-base text-gray-900 bg-white placeholder-gray-500"
+            style={{ fontSize: '16px' }}
           />
           <input
             type="email"
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full mb-4 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#292928] focus:border-transparent"
+            className="w-full mb-4 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#292928] focus:border-transparent text-base text-gray-900 bg-white placeholder-gray-500"
+            style={{ fontSize: '16px' }}
           />
           <input
             type="password"
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full mb-4 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#292928] focus:border-transparent"
+            className="w-full mb-4 p-3 border border-gray-400 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#292928] focus:border-transparent text-base text-gray-900 bg-white placeholder-gray-500"
+            style={{ fontSize: '16px' }}
           />
           <button
             type="submit"
